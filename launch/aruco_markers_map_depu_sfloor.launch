@@ -1,0 +1,39 @@
+<!-- 相机的序号 实际的数值
+     右边：0    右边：1
+	 左边：1    左边：2
+	 后面：2    后面：4-->  
+<launch>
+    <group ns = "camera0">
+		<node pkg="aruco_markers_detect" type="aruco_markers_node" name="aruco_markers" output="screen" respawn="true">
+		    <remap from="/image" to="/camera0/image_raw" />
+			<param name="camera_calibration_file_path" value="$(find aruco_markers_detect)/config/camera_params/hikcam0.yaml"/> 
+			<param name="marker_map_file_path" value="$(find aruco_markers_detect)/config/map/markers_map_depu_sfloor.yaml"/>	
+			<param name="camera_index" value="0"/>
+			<param name="localization_enable" value="true"/>    <!--  设置为false  通过消息开启相机定位-->
+			<param name="config_file_path" value="$(find aruco_markers_detect)/config/markers_classify/markers_classify_depu_sfloor.yaml"/> 
+		    <param name="debug" value="true"/>
+		</node>
+    </group>
+    <group ns = "camera1">
+		<node pkg="aruco_markers_detect" type="aruco_markers_node" name="aruco_markers" output="screen" respawn="true">
+		    <remap from="/image" to="/camera1/image_raw" />
+			<param name="camera_calibration_file_path" value="$(find aruco_markers_detect)/config/camera_params/hikcam1.yaml"/> 
+			<param name="marker_map_file_path" value="$(find aruco_markers_detect)/config/map/markers_map_depu_sfloor.yaml"/>
+			<param name="camera_index" value="1"/>	
+			<param name="localization_enable" value="false"/>   
+			<param name="config_file_path" value="$(find aruco_markers_detect)/config/markers_classify/markers_classify_depu_sfloor.yaml"/> 	
+		    <param name="debug" value="true"/>
+		</node>
+    </group>
+    <group ns = "camera2">
+		<node pkg="aruco_markers_detect" type="aruco_markers_node" name="aruco_markers" output="screen" respawn="true">
+		    <remap from="/image" to="/camera2/image_raw" />
+			<param name="camera_calibration_file_path" value="$(find aruco_markers_detect)/config/camera_params/hikcam2.yaml"/> 
+			<param name="marker_map_file_path" value="$(find aruco_markers_detect)/config/map/markers_map_depu_sfloor.yaml"/>
+			<param name="camera_index" value="2"/>	
+			<param name="localization_enable" value="false"/>	
+			<param name="config_file_path" value="$(find aruco_markers_detect)/config/markers_classify/markers_classify_depu_sfloor.yaml"/> 
+		    <param name="debug" value="true"/>
+		</node>
+    </group>
+</launch>

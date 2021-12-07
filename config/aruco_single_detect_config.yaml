@@ -1,0 +1,14 @@
+aruco_single_detect_config: 
+    config:
+          camera_num :  1
+          camera_calibration_file_path :  "/home/flfjepl/catkin_ws_vision_location/src/aruco_markers_detect/config/camera_params/"
+          camera_calibration_file_names :  ["hikcam0.yaml"]
+          topic_cameral_control :  "/camera_control"
+          camera_topic_name :  ["/camera0/image_raw"]   #二维码检测输入图像话题名
+          camera_detect_topic_name:  ["/camera0/out"] #二维码检测结果话题  调试 可视化用
+          markers_map_pose_topic:  ["/camera0/arucoMarkersMapPose"]       #输出结果topic名称
+          localization_enable:  [true]
+          debug:   true
+          markerSize:  0.15
+          tfFrameToChildFrame: ["camera0", "marker"]
+

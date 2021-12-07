@@ -1,0 +1,4 @@
+<library path="lib/libaruco_markers_detect">
+	<class name="aruco_markers/aruco_markers_nodelet"  type="aruco_markers::aruco_markers_nodelet"	base_class_type="nodelet::Nodelet">
+	</class>
+</library>

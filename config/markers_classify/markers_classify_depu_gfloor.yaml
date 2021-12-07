@@ -1,0 +1,17 @@
+# 各个坐标系下二维码的数量
+coordinates_markers_quantity:
+    coordinate1: 25
+    
+
+# 各个坐标系下二维码ID
+coordinates_markers_set:
+    coordinate1: [15,16,17,18,19,5,6,7,8,9,45,46,47,48,49,25,26,27,28,29,40,41,42,43,44]
+
+   
+
+# [x, y, z, yaw, pitch, roll]
+# 以全局坐标系为父坐标系，以下各个坐标系为子坐标系的TF
+coordinates_TF:
+    coordinate1: [0, 0, 0, 0, 0, 0 ]
+
+
